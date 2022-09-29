@@ -1,3 +1,4 @@
+// comente varias cosas de script.js para corroborar que estaba funcionando lo de fetch
 // traigo los productos desde un json local
 
 const productosCBD = document.getElementById('divproductos')
@@ -6,7 +7,7 @@ fetch('../productoscbd.json')
     .then ((res) => res.json())
     .then((data) => {
 
-        data.forEach((productos) => {
+        data.forEach((el) => {
             const li = document.createElement('li')
             li.innerHTML = `
             <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 icono-wrap">
@@ -27,7 +28,7 @@ fetch('../productoscbd.json')
 </div>
             `
 
-            listaProductos.append(li)
+            productosCBD.appendChild(li)
 
 
             let Suma = document.getElementById(`suma${el.id}`)
